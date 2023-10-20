@@ -1,7 +1,7 @@
 import "./testimonials.scss"
 
 export default function Testimonials() {
-  
+
   const data = [
     {
       id: 1,
@@ -40,26 +40,26 @@ export default function Testimonials() {
     <div className="testimonials" id="testimonials">
       <h1>Testimonials</h1>
       <div className="container">
-        <div className="card">
+        {data.map(d=>(
+        <div className={d.featured ? "card featured" : "card"}>
           <div className="top">
             <img className="left" src="assets/right-arrow.png" alt="" />
             <img
             className="user"
-              src="https://images.ctfassets.net/pdf29us7flmy/JwfQP2Ia18nSKxSZdzqhJ/cf932866638dbffc31ea2cbd506d445d/wfh-remote-work-from-home-laptop-desk.jpg?w=1440&q=100&fm=avif"
+              src={d.img}
               alt=""
             />
-            <img className="right" src="assets/youtube.png" alt="" />
+            <img className="right" src={d.icon} alt="" />
           </div>
           <div className="center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius culpa
-            minus optio in alias accusantium dolorum ratione sunt deleniti
-            provident.
+            {d.desc}
           </div>
           <div className="bottom">
-            <h3>Alex</h3>
-            <h4>CEO of LAMA</h4>
+            <h3>{d.name}</h3>
+            <h4>{d.title}</h4>
           </div>
         </div>
+        ))}
       </div>
     </div>
   );

@@ -63,6 +63,10 @@
             }
             h2{
                 font-size: 35px;
+
+                @include mobile{
+                    font-size: 25px;
+                }
             }
             h3{
                 font-size: 30px;
